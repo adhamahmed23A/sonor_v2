@@ -29,7 +29,7 @@ const HeroSection = () => {
           />
         </div>
       )}
-      <div className="relative max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto text-center z-30 pt-28 md:pt-36 lg:pt-44 px-6">
+      <div className="section-container relative text-center z-30 pt-28 md:pt-36 lg:pt-44 px-6">
         <div className="flex flex-col gap-6">
           {/* Animated Announcement */}
           <div className="mx-auto w-fit rounded-full p-px bg-conic-gradient animate-rotate-border">
