@@ -1,10 +1,11 @@
 import HeroSection from "./components/hero-section";
+import { TrustedSection } from "./components/trusted-section";
 
 export const LandingPage = () => {
   return (
     <>
       <HeroSection />
-      <h1>Trusted by</h1>
+      <TrustedSection />
       <h1>Features</h1>
       <h1>Usage</h1>
       <h1>Pricing</h1>
