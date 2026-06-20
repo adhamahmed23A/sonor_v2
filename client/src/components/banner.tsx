@@ -3,10 +3,7 @@ import { ArrowRightIcon } from "lucide-react";
 export const Banner = () => {
   return (
     <>
-      <StickyBanner
-        hideOnScroll={true}
-        className="min-h-fit py-2 border-b bg-background/60 backdrop-blur-md"
-      >
+      <StickyBanner className="min-h-fit py-2 border-b bg-background/60 backdrop-blur-md">
         <p className="flex items-center gap-1 text-sm text-muted-foreground">
           This website demo is developed by
           <a
