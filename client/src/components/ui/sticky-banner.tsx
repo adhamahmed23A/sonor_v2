@@ -1,28 +1,16 @@
 "use client";
 import React, { useState, type SVGProps } from "react";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export const StickyBanner = ({
   className,
   children,
-  hideOnScroll = false,
 }: {
   className?: string;
   children: React.ReactNode;
-  hideOnScroll?: boolean;
 }) => {
   const [open, setOpen] = useState(true);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log(latest);
-    if (hideOnScroll && latest > 40) {
-      setOpen(false);
-    } else {
-      setOpen(true);
-    }
-  });
 
   return (
     <motion.div

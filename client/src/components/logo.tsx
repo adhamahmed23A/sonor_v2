@@ -33,7 +33,7 @@ const Logo = () => {
         </g>
         <g id="logotype" transform=""></g>
       </svg>
-      <h1 className="tracking-tighter text-lg ">Sonour</h1>
+      <h1 className="tracking-tighter text-lg ">Sonor</h1>
     </div>
   );
 };

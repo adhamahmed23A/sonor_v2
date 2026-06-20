@@ -5,6 +5,11 @@
 @import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark *));
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
 
 @theme inline {
   --font-heading: var(--font-sans);
@@ -47,6 +52,24 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-shiny-text: shiny-text 8s infinite;
+  --animate-rotate-border: rotate-border 5s linear infinite;
+  @keyframes rotate-border {
+    100% {
+      --border-angle: 360deg;
+    }
+  }
+  @keyframes shiny-text {
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
 }
 
 :root {
@@ -91,7 +114,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.424 0.199 265.638);
+  --primary: oklch(0.488 0.243 264.376);
   --primary-foreground: oklch(0.97 0.014 254.604);
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
@@ -118,7 +141,13 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 .button {
-  @apply h-fit p-1.5 px-3;
+  @apply h-fit p-1.5 px-3 rounded-sm;
+}
+.text-hover {
+  @apply hover:text-foreground/70;
+}
+.bg-conic-gradient {
+  @apply bg-conic/[from_var(--border-angle)] from-background via-primary/60 to-background from-80% via-90% to-100%;
 }
 @layer base {
   * {
@@ -133,34 +162,5 @@
   }
   html {
     @apply font-sans;
-  }
-}
-@layer components {
-  .glass {
-    background: oklch(from var(--primary) l c h / 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid oklch(from var(--primary) l c h / 0.15);
-  }
-
-  .glass-sm {
-    background: oklch(from var(--primary) l c h / 0.05);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid oklch(from var(--primary) l c h / 0.1);
-  }
-
-  .glass-strong {
-    background: oklch(from var(--primary) l c h / 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid oklch(from var(--primary) l c h / 0.25);
-  }
-
-  .glass-neutral {
-    background: oklch(from var(--background) l c h / 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid oklch(from var(--border) l c h / 0.5);
   }
 }

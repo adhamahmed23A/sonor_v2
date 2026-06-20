@@ -8,8 +8,8 @@ import { ModeToggle } from "./ui/mode-toggle";
 export const Navbar = () => {
   return (
     <>
-      <nav className="w-full h-fit bg-background/60 backdrop-blur-md transition-all duration-200">
-        <div className="max-w-6xl mx-auto py-2 px-6 flex justify-between items-center">
+      <nav className="w-full h-12 bg-background/60 backdrop-blur-md transition-all duration-200 ">
+        <div className="max-w-6xl h-full mx-auto py-2 px-6 flex justify-between items-center">
           <NavLink to="/">
             <Logo />
           </NavLink>
@@ -17,7 +17,7 @@ export const Navbar = () => {
             <div className="flex gap-4 items-center">
               {NAVBAR.links.map(({ name, href }) => (
                 <NavLink key={name} to={href}>
-                  <p className="text-sm tracking-normal hover:text-primary duration-200 ">
+                  <p className="text-sm tracking-normal text-hover duration-200 ">
                     {name}
                   </p>
                 </NavLink>
