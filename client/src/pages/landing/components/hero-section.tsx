@@ -4,33 +4,36 @@ import { Button } from "@/components/ui/button";
 import LightRays from "@/components/ui/LightRays";
 import { useTheme } from "@/providers/theme-provider";
 import { ArrowUpRight } from "lucide-react";
+import { Mockup } from "./mockup";
 
 const HeroSection = () => {
   const { theme } = useTheme();
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       {theme === "dark" && (
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#3c68f1"
-          raysSpeed={0.4}
-          lightSpread={0.4}
-          rayLength={3}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0}
-          distortion={0}
-          className="custom-rays"
-          pulsating={false}
-          fadeDistance={1.4}
-          saturation={1}
-        />
+        <div className="absolute inset-0">
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#3c68f1"
+            raysSpeed={0.4}
+            lightSpread={0.4}
+            rayLength={3}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0}
+            distortion={0}
+            className="custom-rays"
+            pulsating={false}
+            fadeDistance={1.4}
+            saturation={1}
+          />
+        </div>
       )}
-      <div className="absolute inset-0 max-w-4xl mx-auto text-center z-30 pt-28 lg:pt-32 px-6">
+      <div className="relative max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto text-center z-30 pt-28 md:pt-36 lg:pt-44 px-6">
         <div className="flex flex-col gap-6">
           {/* Animated Announcement */}
           <div className="mx-auto w-fit rounded-full p-px bg-conic-gradient animate-rotate-border">
-            <div className="group h-8 w-fit px-1 py-0.5 bg-muted dark:bg-background backdrop-blur-xl flex items-center justify-center gap-2 rounded-full border border-primary/30 duration-200 ">
+            <div className="group h-8 w-fit px-1 py-0.5 bg-muted dark:bg-background flex items-center justify-center gap-2 rounded-full border border-primary/30 duration-200 ">
               <Badge variant="default" className="p-3">
                 Latest update
               </Badge>
@@ -59,6 +62,8 @@ const HeroSection = () => {
               Learn more
             </Button>
           </div>
+          {/* Mockup */}
+          <Mockup />
         </div>
       </div>
     </div>
