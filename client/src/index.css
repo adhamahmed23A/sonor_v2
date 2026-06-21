@@ -161,6 +161,7 @@
 .button {
   @apply h-fit p-1.5 px-3 rounded-sm;
 }
+
 .text-hover {
   @apply hover:text-foreground/70;
 }
@@ -170,7 +171,12 @@
 .section-container {
   @apply max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto;
 }
-
+.glassy-primary {
+  @apply w-fit rounded-lg border border-primary/20 bg-primary/10 p-2 transition-colors duration-200 group-hover:border-primary/30 group-hover:bg-primary/15;
+}
+.icon {
+  @apply size-5 stroke-[1.5] text-blue-600 dark:text-blue-400/80;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
