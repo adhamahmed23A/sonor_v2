@@ -3,7 +3,7 @@ import { TRUSTED_LOGOS } from "@/constants/trusted-brands";
 
 export const TrustedSection = () => {
   return (
-    <div className="section-container mt-18 relative overflow-hidden">
+    <div className="section-container mt-36 relative overflow-hidden">
       <Marquee pauseOnHover className="[--duration:50s]">
         {TRUSTED_LOGOS.map((logo) => (
           <>
