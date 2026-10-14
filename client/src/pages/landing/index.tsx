@@ -3,6 +3,7 @@ import FooterSection from "./components/footer-section";
 import HeroSection from "./components/hero-section";
 import PriceSection from "./components/price-section";
 import { TrustedSection } from "./components/trusted-section";
+import UsageSection from "./components/usage-section";
 
 export const LandingPage = () => {
   return (
