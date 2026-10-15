@@ -27,7 +27,7 @@ const PriceSection = () => {
           <TabsCustomDemo setValue={setValue} tabs={tabs} />
         </div>
         {/* Grid */}
-        <div className="max-w-full grid grid-cols-1  lg:grid-cols-3 gap-4">
+        <div className="max-w-full mt-10 grid grid-cols-1  lg:grid-cols-3 gap-4">
           {PLANS.map((plan) => (
             <div className="col-span-1 min-h-62 w-full p-5 border border-border rounded-xl hover:border-primary/30 transition-all duration-200 ">
               <div className="h-full w-full flex flex-col gap-4">
