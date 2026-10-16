@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import Logo from "./logo";
 import { NAVBAR } from "@/constants/navbar";
 import { Button } from "./ui/button";
@@ -28,7 +28,7 @@ export const Navbar = () => {
             <Separator orientation="vertical" className="h-5 my-auto" />
             <div className="flex justify-center items-center gap-2">
               <Button variant={"ghost"} className="button">
-                Sign in
+                <Link to={"/auth"}> Sign in</Link>
               </Button>
               <Button className="button">Get started</Button>
             </div>
