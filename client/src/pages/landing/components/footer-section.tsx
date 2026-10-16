@@ -9,15 +9,15 @@ const FooterSection = () => {
     <footer className="section-container mt-36 flex flex-col gap-4">
       <div className="flex flex-col items-start justify-between gap-10 lg:flex-row">
         {/* Brand */}
-        <div className="flex flex-col items-start gap-6">
+        <div className="flex flex-col items-center md:items-start gap-6">
           {" "}
           <Logo />{" "}
-          <p className="w-full max-w-xl text-muted-foreground">
-            {" "}
-            Upload, explore, and get instant AI-powered answers from your
-            documents. <br /> Sonor turns your PDFs into interactive
-            knowledge.{" "}
-          </p>{" "}
+          <p className="w-full text-center md:max-w-3/4 lg:w-full text-sm leading-6 text-muted-foreground md:text-left">
+            Sonor makes working with PDFs smarter, faster, and more intuitive.
+            Turn lengthy documents into interactive knowledge, ask questions in
+            natural language, and get AI-powered answers grounded in your
+            content.
+          </p>
           <div className="flex items-center gap-5">
             {" "}
             {SOCIAL_LINKS.map((link) => (
@@ -35,22 +35,23 @@ const FooterSection = () => {
             ))}{" "}
           </div>{" "}
         </div>{" "}
-        {/* Footer Links */}{" "}
-        <div className="grid w-full grid-cols-2 gap-8 sm:max-w-md lg:max-w-lg">
-          {" "}
+        {/* Footer Links */}
+        <div className="grid w-full grid-cols-2 justify-items-center md:justify-items-start gap-8 md:max-w-md lg:max-w-lg">
           {FOOTER_LINKS.map((footerLink) => (
-            <div key={footerLink.title} className="flex flex-col gap-4">
-              <h2 className="text-sm font-semibold text-foreground">
+            <div
+              key={footerLink.title}
+              className="flex flex-col gap-2 text-center"
+            >
+              <h2 className="text-sm text-left font-semibold text-foreground">
                 {footerLink.title}
               </h2>
-              <ul className="flex flex-col gap-3">
-                {" "}
+              <div className="h-px bg-transparent bg-linear-to-r from-primary/30 to-transparent" />
+              <ul className="mt-2 flex flex-col text-left gap-3">
                 {footerLink.links.map((link) => (
                   <li key={link.name}>
-                    {" "}
                     <Link
                       to={link.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary "
                     >
                       {link.name}
                     </Link>
@@ -66,7 +67,7 @@ const FooterSection = () => {
         className=" bg-transparent bg-linear-to-r from-transparent via-border to-transparent"
       />
       {/* Copyright */}
-      <div className="py-2 text-sm text-muted-foreground">
+      <div className="py-2 text-sm text-muted-foreground text-center md:text-left">
         © {date} Sonor. All rights reserved.
       </div>
       {/* Oversized Brand */}

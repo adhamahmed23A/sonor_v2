@@ -170,7 +170,7 @@
   @apply bg-conic/[from_var(--border-angle)] from-background via-primary/60 to-background from-80% via-90% to-100%;
 }
 .section-container {
-  @apply max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto;
+  @apply max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto px-6;
 }
 .glassy-primary {
   @apply w-fit rounded-lg border border-primary/20 bg-primary/10 p-2 transition-colors duration-200 group-hover:border-primary/30 group-hover:bg-primary/15;
